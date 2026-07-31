@@ -32,7 +32,7 @@ El proyecto incluye soporte para ejecutarse en un contenedor Docker, facilitando
 
 \`\`\`bash
 # Clonar el repositorio
-cd ClinicaVeterinaria
+https://github.com/Esthercita-Factory/danielsntgo-ClinicaVeterinaria.git
 
 # Entrar al directorio
 cd ClinicaVeterinaria
