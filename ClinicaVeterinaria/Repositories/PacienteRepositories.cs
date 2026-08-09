@@ -10,16 +10,16 @@ public static class PacienteRepositories
     {
         Pacientes = new List<Paciente>()
         {
-                    new Paciente("Rocky", 3, 28, "Labrador", "Vómito y diarrea"),
-                    new Paciente("Michi", 2, 4, "Siames", "Estornudos frecuentes"),
-                    new Paciente("Toby", 5, 15, "Beagle", "Cojera en pata trasera"),
-                    new Paciente("Luna", 1, 3, "Persa", "Falta de apetito"),
-                    new Paciente("Max", 7, 32, "Pastor Aleman", "Letargo y fiebre"),
-                    new Paciente("Nina", 4, 6, "Poodle", "Picazon excesiva"),
-                    new Paciente("Simon", 6, 5, "Criollo", "Herida en pata delantera"),
-                    new Paciente("Coco", 2, 2, "Chihuahua", "Tos persistente"),
-                    new Paciente("Bella", 3, 22, "Golden Retriever", "Revision de rutina"),
-                    new Paciente("Oreo", 1, 4, "Mestizo", "Vacunacion anual") 
+            new Paciente("rocky", 3, 28, "labrador", "vomito y diarrea"),
+            new Paciente("michi", 2, 4, "siames", "estornudos frecuentes"),
+            new Paciente("toby", 5, 15, "beagle", "cojera en pata trasera"),
+            new Paciente("luna", 1, 3, "persa", "falta de apetito"),
+            new Paciente("max", 7, 32, "pastor aleman", "letargo y fiebre"),
+            new Paciente("nina", 4, 6, "poodle", "picazon excesiva"),
+            new Paciente("simon", 6, 5, "criollo", "herida en pata delantera"),
+            new Paciente("coco", 2, 2, "chihuahua", "tos persistente"),
+            new Paciente("bella", 3, 22, "golden retriever", "revision de rutina"),
+            new Paciente("oreo", 1, 4, "mestizo", "vacunacion anual")
         };
     }
     public static void RegistrarPaciente(Paciente pacienteRegistrado)
@@ -32,9 +32,9 @@ public static class PacienteRepositories
         return Pacientes;
     }
 
-    public static void buscarPacientePorNombre( List<Paciente> lista, string nombre)
+    public static Paciente? buscarPacientePorNombre(string nombre)
     {
-        Pacientes.FirstOrDefault(c => c.Nombre == nombre);
+      return Pacientes.FirstOrDefault(c => c.Nombre.Equals(nombre,StringComparison.OrdinalIgnoreCase));
     }
     
 }

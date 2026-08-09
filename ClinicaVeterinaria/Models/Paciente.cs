@@ -19,15 +19,6 @@ public class Paciente
         Raza = raza.Trim().ToLower();
         Sintomas = sintomas.Trim().ToLower();
     }
-
-    public void MostrarPaciente()
-    {
-        Console.WriteLine($"Paciente: {Id}");
-        Console.WriteLine($"Nombre: {Nombre}");
-        Console.WriteLine($"Edad: {Edad}");
-        Console.WriteLine($"Raza: {Raza}");
-        Console.WriteLine($"Sintomas: {Sintomas}");
-    }
 }
 
 

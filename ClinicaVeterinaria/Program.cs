@@ -1,3 +1,3 @@
-﻿using ClinicaVeterinaria.models;
+﻿using ClinicaVeterinaria.UI;
 
-Console.WriteLine();
+ControlMenu.Iniciar();
