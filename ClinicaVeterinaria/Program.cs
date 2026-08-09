@@ -1,1 +1,3 @@
-﻿Console.WriteLine();
+﻿using ClinicaVeterinaria.models;
+
+Console.WriteLine();
