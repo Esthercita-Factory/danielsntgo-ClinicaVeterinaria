@@ -5,20 +5,20 @@ namespace ClinicaVeterinaria.Services;
 
 public static class PacienteServices
 {
-   public static void RegistrarPaciente(Paciente paciente)
+   public static void RegistrarPaciente(PacienteMascota pacienteMascota)
    {
-      if (string.IsNullOrWhiteSpace(paciente.Nombre))
+      if (string.IsNullOrWhiteSpace(pacienteMascota.Nombre))
          throw new ArgumentException("El nombre no puede estar vacio");
-      if (string.IsNullOrWhiteSpace(paciente.Raza))
+      if (string.IsNullOrWhiteSpace(pacienteMascota.Raza))
          throw new ArgumentException("La raza no puede estar vacio");
-      if (paciente.Edad <= 0)
+      if (pacienteMascota.Edad <= 0)
          throw new ArgumentException("La edad debe ser mayor a 0");
-      if (paciente.Peso <= 0)
+      if (pacienteMascota.Peso <= 0)
          throw new ArgumentException("El peso debe ser mayor a 0");
-      PacienteRepositories.RegistrarPaciente(paciente);
+      PacienteRepositories.RegistrarPaciente(pacienteMascota);
    }
 
-   public static Paciente? BuscarPaciente(string nombre)
+   public static PacienteMascota? BuscarPaciente(string nombre)
    {
       if (string.IsNullOrWhiteSpace(nombre))
          throw new ArgumentException("Debe ingresar un nombre para buscar");
@@ -26,7 +26,7 @@ public static class PacienteServices
       return PacienteRepositories.buscarPacientePorNombre(nombreNormalizado);
    }
 
-   public static List<Paciente> MostrarPacienteListos()
+   public static List<PacienteMascota> MostrarPacienteListos()
    {
       return PacienteRepositories.ListarPacientes();
    }

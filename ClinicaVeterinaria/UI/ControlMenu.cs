@@ -60,9 +60,9 @@ public static class ControlMenu
             Console.Write("Síntomas: ");
             string sintomas = Console.ReadLine().Trim().ToLower();
 
-            Paciente nuevoPaciente = new Paciente(nombre, edad, peso, raza, sintomas);
+            PacienteMascota nuevoPacienteMascota = new PacienteMascota(nombre, edad, peso, raza, sintomas);
 
-            PacienteServices.RegistrarPaciente(nuevoPaciente);
+            PacienteServices.RegistrarPaciente(nuevoPacienteMascota);
             Console.WriteLine("Paciente registrado con éxito.");
         }
         catch (FormatException)
@@ -104,7 +104,7 @@ public static class ControlMenu
 
     public static void ListarDesdeConsola()
     {
-        List<Paciente> pacientes = PacienteServices.MostrarPacienteListos();
+        List<PacienteMascota> pacientes = PacienteServices.MostrarPacienteListos();
         if (pacientes.Count == 0)
         {
             Console.WriteLine("No hay pacientes registrados.");
@@ -116,13 +116,13 @@ public static class ControlMenu
             MostrarPaciente(i);
         }
     }
-    public static void MostrarPaciente(Paciente paciente)
+    public static void MostrarPaciente(PacienteMascota pacienteMascota)
     {
-        Console.WriteLine($"Paciente: {paciente.Id}");
-        Console.WriteLine($"Nombre: {paciente.Nombre}");
-        Console.WriteLine($"Edad: {paciente.Edad}");
-        Console.WriteLine($"Raza: {paciente.Raza}");
-        Console.WriteLine($"Sintomas: {paciente.Sintomas}");
+        
+        Console.WriteLine($"Nombre: {pacienteMascota.Nombre}");
+        Console.WriteLine($"Edad: {pacienteMascota.Edad}");
+        Console.WriteLine($"Raza: {pacienteMascota.Raza}");
+        Console.WriteLine($"Sintomas: {pacienteMascota.Sintomas}");
     }
 }
 
