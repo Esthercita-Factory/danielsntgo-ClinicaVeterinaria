@@ -24,13 +24,13 @@ public static class ControlMenu
             switch (opcion)
             {
               case "1": 
-                  RegistrarDesdeConsola();
+                  // RegistrarDesdeConsola();
                   break;
               case "2":
-                  ListarDesdeConsola();
+                  // ListarDesdeConsola();
                   break;
               case "3": 
-                  BuscarDesdeConsola();
+                  // BuscarDesdeConsola();
                   break;
               case "4":
                   Console.WriteLine("Saliendo del sistema ");
@@ -41,90 +41,90 @@ public static class ControlMenu
             }
         } while (opcion != "4");
     }
-
-    public static void RegistrarDesdeConsola()
-    {
-        try
-        {
-            Console.Write("Nombre: ");
-            string nombre = Console.ReadLine().Trim().ToLower();
-            
-            
-            Console.Write("Edad: ");
-            int edad = int.Parse(Console.ReadLine());
-
-            Console.Write("Peso: ");
-            int peso = int.Parse(Console.ReadLine());
-
-            Console.Write("Raza: ");
-            string raza = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Síntomas: ");
-            string sintomas = Console.ReadLine().Trim().ToLower();
-
-            PacienteMascota nuevoPacienteMascota = new PacienteMascota(nombre, edad, peso, raza, sintomas);
-            
-            PacienteServices.RegistrarPaciente(nuevoPacienteMascota);
-            Console.WriteLine("Paciente registrado con éxito.");
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("Error: edad y peso deben ser números enteros válidos.");
-        }
-        catch (ArgumentException ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Ocurrio un error inesperado: {ex.Message}");
-        }
-    }
-
-    public static void BuscarDesdeConsola()
-    {
-        try
-        {
-            Console.WriteLine("Ingrese nombre a buscar: ");
-            string nombre = Console.ReadLine().Trim().ToLower();
-            var paciente = PacienteServices.BuscarPaciente(nombre);
-            if (paciente != null)
-                MostrarPaciente(paciente);
-            else
-            {
-                Console.WriteLine("No se encontro  ningun paciente con ese nombre.");
-            }
-
-        }
-        
-        catch (ArgumentException ex)
-        {
-            Console.WriteLine($"Error: {ex.Message}");
-        }
-       
-    }
-
-    public static void ListarDesdeConsola()
-    {
-        List<PacienteMascota> pacientes = PacienteServices.MostrarPacienteListos();
-        if (pacientes.Count == 0)
-        {
-            Console.WriteLine("No hay pacientes registrados.");
-            return;
-        }
-
-        foreach (var i in pacientes)
-        {
-            MostrarPaciente(i);
-        }
-    }
-    public static void MostrarPaciente(PacienteMascota pacienteMascota)
-    {
-        
-        Console.WriteLine($"Nombre: {pacienteMascota.Nombre}");
-        Console.WriteLine($"Edad: {pacienteMascota.Edad}");
-        Console.WriteLine($"Raza: {pacienteMascota.Raza}");
-        Console.WriteLine($"Sintomas: {pacienteMascota.Sintomas}");
-    }
 }
 
+//     public static void RegistrarDesdeConsola()
+//     {
+//         try
+//         {
+//             Console.Write("Nombre: ");
+//             string nombre = Console.ReadLine().Trim().ToLower();
+//             
+//             
+//             Console.Write("Edad: ");
+//             int edad = int.Parse(Console.ReadLine());
+//
+//             Console.Write("Peso: ");
+//             int peso = int.Parse(Console.ReadLine());
+//
+//             Console.Write("Raza: ");
+//             string raza = Console.ReadLine().Trim().ToLower();
+//
+//             Console.Write("Síntomas: ");
+//             string sintomas = Console.ReadLine().Trim().ToLower();
+//
+//             PacienteMascota nuevoPacienteMascota = new PacienteMascota(nombre, edad, peso, raza, cc);
+//             PacienteServices.RegistrarPaciente(nuevoPacienteMascota);
+//             Console.WriteLine("Paciente registrado con éxito.");
+//         }
+//         catch (FormatException)
+//         {
+//             Console.WriteLine("Error: edad y peso deben ser números enteros válidos.");
+//         }
+//         catch (ArgumentException ex)
+//         {
+//             Console.WriteLine($"Error: {ex.Message}");
+//         }
+//         catch (Exception ex)
+//         {
+//             Console.WriteLine($"Ocurrio un error inesperado: {ex.Message}");
+//         }
+//     }
+//
+//     public static void BuscarDesdeConsola()
+//     {
+//         try
+//         {
+//             Console.WriteLine("Ingrese nombre a buscar: ");
+//             string nombre = Console.ReadLine().Trim().ToLower();
+//             var paciente = PacienteServices.BuscarPaciente(nombre);
+//             if (paciente != null)
+//                 MostrarPaciente(paciente);
+//             else
+//             {
+//                 Console.WriteLine("No se encontro  ningun paciente con ese nombre.");
+//             }
+//
+//         }
+//         
+//         catch (ArgumentException ex)
+//         {
+//             Console.WriteLine($"Error: {ex.Message}");
+//         }
+//        
+//     }
+//
+//     public static void ListarDesdeConsola()
+//     {
+//         List<PacienteMascota> pacientes = PacienteServices.MostrarPacienteListos();
+//         if (pacientes.Count == 0)
+//         {
+//             Console.WriteLine("No hay pacientes registrados.");
+//             return;
+//         }
+//
+//         foreach (var i in pacientes)
+//         {
+//             MostrarPaciente(i);
+//         }
+//     }
+//     public static void MostrarPaciente(PacienteMascota pacienteMascota)
+//     {
+//         
+//         Console.WriteLine($"Nombre: {pacienteMascota.Nombre}");
+//         Console.WriteLine($"Edad: {pacienteMascota.Edad}");
+//         Console.WriteLine($"Raza: {pacienteMascota.Raza}");
+//         Console.WriteLine($"Sintomas: {pacienteMascota}");
+//     }
+// }
+//
