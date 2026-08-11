@@ -5,16 +5,16 @@ public  class DuenoMascota
     
         public Guid Id { get; set; }
         public string NombreDueno { get; set; }
-        public int TelefonoDueno { get; set; }
+        public string TelefonoDueno { get; set; }
         public List<PacienteMascota>  Mascotas { get; set; }
-        public Guid? DuenoId { get; set; }
-    public DuenoMascota(string nombreDueno, int telefonoDueno, List<PacienteMascota> mascotas)
+        
+    public DuenoMascota(string nombreDueno, string telefonoDueno)
     {
         Id = Guid.NewGuid();
-        NombreDueno =  nombreDueno.ToLower();
-        TelefonoDueno = telefonoDueno;
+        NombreDueno =  nombreDueno.Trim().ToLower();
+        TelefonoDueno = telefonoDueno.Trim();
         Mascotas = new List<PacienteMascota>();
     }
     
    
-}
+}   

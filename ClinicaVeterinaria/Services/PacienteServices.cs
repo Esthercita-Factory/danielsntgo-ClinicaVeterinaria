@@ -15,7 +15,7 @@ public static class PacienteServices
          throw new ArgumentException("La edad debe ser mayor a 0");
       if (pacienteMascota.Peso <= 0)
          throw new ArgumentException("El peso debe ser mayor a 0");
-      PacienteRepositories.RegistrarPaciente(pacienteMascota);
+      PacienteMascotaRepositories.RegistrarPaciente(pacienteMascota);
    }
 
    public static PacienteMascota? BuscarPaciente(string nombre)
@@ -23,11 +23,11 @@ public static class PacienteServices
       if (string.IsNullOrWhiteSpace(nombre))
          throw new ArgumentException("Debe ingresar un nombre para buscar");
       string nombreNormalizado = nombre.Trim().ToLower();
-      return PacienteRepositories.buscarPacientePorNombre(nombreNormalizado);
+      return PacienteMascotaRepositories.buscarPacientePorNombre(nombreNormalizado);
    }
 
    public static List<PacienteMascota> MostrarPacienteListos()
    {
-      return PacienteRepositories.ListarPacientes();
+      return PacienteMascotaRepositories.ListarPacientes();
    }
 }

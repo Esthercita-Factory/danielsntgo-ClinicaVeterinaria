@@ -2,11 +2,11 @@ using ClinicaVeterinaria.models;
 
 namespace ClinicaVeterinaria.Repositories;
 
-public static class PacienteRepositories
+public static class PacienteMascotaRepositories
 {
     public static List<PacienteMascota> Pacientes { get; set; }
 
-    static PacienteRepositories()
+    static PacienteMascotaRepositories()
     {
         Pacientes = new List<PacienteMascota>()
         {
@@ -20,11 +20,12 @@ public static class PacienteRepositories
             new PacienteMascota("coco", 2, 2, "chihuahua", "tos persistente"),
             new PacienteMascota("bella", 3, 22, "golden retriever", "revision de rutina"),
             new PacienteMascota("oreo", 1, 4, "mestizo", "vacunacion anual")
+
         };
     }
-    public static void RegistrarPaciente(PacienteMascota pacienteMascotaRegistrado)
+    public static void RegistrarPaciente(PacienteMascota pacienteRegistrado)
     {
-        Pacientes.Add(pacienteMascotaRegistrado);
+        Pacientes.Add(pacienteRegistrado);
     }
 
     public static List<PacienteMascota> ListarPacientes()
@@ -36,5 +37,24 @@ public static class PacienteRepositories
     {
       return Pacientes.FirstOrDefault(c => c.Nombre.Equals(nombre,StringComparison.OrdinalIgnoreCase));
     }
+    public static void AsignarDuenosDePrueba()
+    {
+        var duenos = DuenoMascotaRepositories.Duenos;
+
+        AsignarDueno(Pacientes[0], duenos[0]);
+        AsignarDueno(Pacientes[1], duenos[1]);
+        AsignarDueno(Pacientes[2], duenos[2]);
+        AsignarDueno(Pacientes[3], duenos[3]);
+        AsignarDueno(Pacientes[4], duenos[0]);
+        AsignarDueno(Pacientes[5], duenos[4]);
+        AsignarDueno(Pacientes[6], duenos[4]);
+    }
+
+    public static void AsignarDueno(PacienteMascota mascota, DuenoMascota dueno)
+    {
+        mascota.DuenoId = dueno.Id;
+        dueno.Mascotas.Add(mascota);
+    }
+
     
 }

@@ -11,6 +11,7 @@ public static class ControlMenu
         string opcion;
         do
         {
+            // Console.BackgroundColor = ConsoleColor.White;
             Console.WriteLine("1. Registrar paciente");
             Console.WriteLine("2. Listar pacientes");
             Console.WriteLine("3. Consultar paciente");
@@ -48,6 +49,7 @@ public static class ControlMenu
             Console.Write("Nombre: ");
             string nombre = Console.ReadLine().Trim().ToLower();
             
+            
             Console.Write("Edad: ");
             int edad = int.Parse(Console.ReadLine());
 
@@ -61,7 +63,7 @@ public static class ControlMenu
             string sintomas = Console.ReadLine().Trim().ToLower();
 
             PacienteMascota nuevoPacienteMascota = new PacienteMascota(nombre, edad, peso, raza, sintomas);
-
+            
             PacienteServices.RegistrarPaciente(nuevoPacienteMascota);
             Console.WriteLine("Paciente registrado con éxito.");
         }

@@ -18,6 +18,7 @@ public class PacienteMascota
         Peso = peso;
         Raza = raza.Trim().ToLower();
         Sintomas = sintomas.Trim().ToLower();
+        
     }
 }
 
