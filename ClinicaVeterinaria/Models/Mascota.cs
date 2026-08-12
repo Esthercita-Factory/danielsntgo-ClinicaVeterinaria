@@ -7,9 +7,9 @@ public class PacienteMascota
     public int Edad { get; set; }
     public int Peso { get; set; }
     public string? Raza { get; set; }
-    public DuenoMascota? Dueno { get; set; }
+    public Tutor? Dueno { get; set; }
 
-    public PacienteMascota(string nombre, int edad, int peso, string raza, DuenoMascota? dueno)
+    public PacienteMascota(string nombre, int edad, int peso, string raza, Tutor? dueno)
     {
         Id = Guid.NewGuid();
         Nombre = nombre.Trim().ToLower();
