@@ -11,11 +11,12 @@ public static class ControlMenu
         string opcion;
         do
         {
-            // Console.BackgroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black; 
+            Console.ForegroundColor = ConsoleColor.Green; 
             Console.WriteLine("1. Registrar paciente");
-            Console.WriteLine("2. Listar pacientes");
+            Console.WriteLine("2. Listar pacientes  ");
             Console.WriteLine("3. Consultar paciente");
-            Console.WriteLine("4. Salir");
+            Console.WriteLine("4. Salir             ");
             
             Console.Write("Seleccione una opcion: ");
             opcion = Console.ReadLine().Trim();

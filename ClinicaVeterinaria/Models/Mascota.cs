@@ -1,22 +1,29 @@
 namespace ClinicaVeterinaria.models;
 
-public class PacienteMascota
+public class Mascota
 {
     public Guid Id { get; set; }
     public string Nombre { get; set; }
     public int Edad { get; set; }
     public int Peso { get; set; }
-    public string? Raza { get; set; }
-    public Tutor? Dueno { get; set; }
+    public string Especie { get; set; }
+    public string Raza { get; set; }
+    public Tutor? Tutor { get; set; }
 
-    public PacienteMascota(string nombre, int edad, int peso, string raza, Tutor? dueno)
+    public Mascota(string nombre,
+                   int edad,
+                   int peso,
+                   string especie,
+                   string raza,
+                   Tutor? tutor)
     {
         Id = Guid.NewGuid();
         Nombre = nombre.Trim().ToLower();
         Edad = edad;
         Peso = peso;
+        Especie = especie.Trim().ToLower();
         Raza = raza.Trim().ToLower();
-        Dueno = dueno;
+        Tutor = tutor;
         
     }
 }

@@ -1,22 +1,25 @@
 namespace ClinicaVeterinaria.models;
 
-public  class DuenoMascota
+public  class Tutor
 {
     
         public Guid Id { get; set; }
-        public string NombreDueno { get; set; }
+        public string Nombre { get; set; }
         public string  CC { get;  set; }
-        public string TelefonoDueno { get; set; }
-        public List<PacienteMascota>  Mascotas { get; set; }
+        public string Telefono { get; set; }
+        public string Email { get; set; }
+        public List<Mascota>  Mascotas { get; set; }
         
-    public DuenoMascota(string nombreDueno, string telefonoDueno, string cc)
+    public Tutor(string nombre,
+                 string cc,
+                 string telefono,
+                 string email)
     {
         Id = Guid.NewGuid();
-        NombreDueno =  nombreDueno.Trim().ToLower();
-        CC = cc.Trim().ToLower();
-        TelefonoDueno = telefonoDueno.Trim();
-        Mascotas = new List<PacienteMascota>();
+        Nombre =  nombre.Trim().ToLower();
+        CC = cc.Trim().Replace(" ", "");
+        Telefono = telefono.Trim().Replace(" ", "");
+        Email = email.Trim().Replace(" ", "");
+        Mascotas = new List<Mascota>();
     }
-    
-   
 }    

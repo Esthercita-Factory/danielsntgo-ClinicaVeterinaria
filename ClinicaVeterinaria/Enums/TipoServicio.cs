@@ -1,6 +1,6 @@
 ﻿namespace ClinicaVeterinaria.Enums;
 
-public enum Servicio
+public enum TipoServicio
 {
     ConsultaGeneral = 1,
     Cirugia = 2,
