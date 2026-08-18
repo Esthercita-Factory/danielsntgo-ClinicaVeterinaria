@@ -1,8 +1,9 @@
+using ClinicaVeterinaria.IInterfaces;
 using ClinicaVeterinaria.models;
 
 namespace ClinicaVeterinaria.Repositories;
 
-public  static class TutorRepositories
+public class TutorRepositories : ICrudOperations<Tutor>
 { 
     public static List<Tutor> Tutores { get; set; }
 
@@ -20,14 +21,25 @@ public  static class TutorRepositories
         };
     }
     
-    public static void Registrar(Tutor tutor) => Tutores.Add(tutor);
+    public void Registrar(Tutor tutor) => Tutores.Add(tutor);
 
-    public static List<Tutor> Buscar() => Tutores;
+    public List<Tutor> Buscar() => Tutores;
 
-    public static void Actualizar() { }
+    public void Actualizar(Tutor entidad)
+    {
+        // modificar todos  los metodos acrualizar
+        var existente = Tutores.Find(t => t.Id == entidad.Id);
+        if (existente != null)
+        {
+            existente.Nombre = entidad.Nombre;
+            existente.CC = entidad.CC;
+            existente.Telefono = entidad.Telefono;
+            existente.Email = entidad.Email;
+        }
+    }
 
-    public static void Eliminar() { }
+    public void Eliminar(Tutor tutor) => Tutores.Remove(tutor);
 
-    public static void Asignar(Tutor tutor, Mascota mascota) => tutor.Mascotas.Add(mascota);
+    public void Asignar(Tutor tutor, object mascota) => tutor.Mascotas.Add((Mascota)mascota);
     
 }

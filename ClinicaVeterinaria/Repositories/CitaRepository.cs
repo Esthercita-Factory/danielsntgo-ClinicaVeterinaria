@@ -6,7 +6,7 @@ namespace ClinicaVeterinaria.Repositories;
 
 public class CitaRepositories : ICrudOperations<Cita>
 {
-    public List<Cita> Citas { get; set; }
+    public static List<Cita> Citas { get; set; }
     
     public CitaRepositories(List<Mascota> mascotas)
     {
@@ -26,9 +26,25 @@ public class CitaRepositories : ICrudOperations<Cita>
 
     public List<Cita> Buscar() => Citas;
 
-    public void Actualizar() { }
+    public void Actualizar(Cita entidad)
+    {
+        // modificar todos  los metodos acrualizar
+        var existente = Citas.Find(c => c.Id == entidad.Id);
+        if (existente != null)
+        {
+            existente.Motivo = entidad.Motivo;
+            existente.Fecha = entidad.Fecha;
+            existente.Servicio = entidad.Servicio;
+            existente.Estado = entidad.Estado;
+            existente.Mascota = entidad.Mascota;
+        }
+    }
 
-    public void Eliminar() { }
+    public void Eliminar(Cita cita) => Citas.Remove(cita);
 
-    public void Asignar() { }
+    public void Asignar(Cita cita, object mascota)
+    {
+        cita.Mascota = (Mascota)mascota;
+        Citas.Add(cita);
+    }
 }

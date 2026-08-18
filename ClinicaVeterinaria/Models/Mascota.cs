@@ -9,7 +9,7 @@ public class Mascota
     public string Especie { get; set; }
     public string Raza { get; set; }
     public Tutor? Tutor { get; set; }
-
+    
     public Mascota(string nombre,
                    int edad,
                    int peso,
@@ -24,7 +24,6 @@ public class Mascota
         Especie = especie.Trim().ToLower();
         Raza = raza.Trim().ToLower();
         Tutor = tutor;
-        
     }
 }
 
