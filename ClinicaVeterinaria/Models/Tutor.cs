@@ -3,7 +3,7 @@ namespace ClinicaVeterinaria.models;
 public  class Tutor
 {
     
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         public string Nombre { get; set; }
         public string  CC { get;  set; }
         public string Telefono { get; set; }

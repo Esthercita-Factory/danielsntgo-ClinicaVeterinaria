@@ -4,9 +4,9 @@ using ClinicaVeterinaria.models;
 
 namespace ClinicaVeterinaria.Repositories;
 
-public class CitaRepositories : ICrudOperations<Cita>
+public class CitaRepositories : ICrudOperations<Cita>, ICitaRepository
 {
-    public static List<Cita> Citas { get; set; }
+    private static List<Cita> Citas { get; set; }
     
     public CitaRepositories(List<Mascota> mascotas)
     {
@@ -28,16 +28,7 @@ public class CitaRepositories : ICrudOperations<Cita>
 
     public void Actualizar(Cita entidad)
     {
-        // modificar todos  los metodos acrualizar
-        var existente = Citas.Find(c => c.Id == entidad.Id);
-        if (existente != null)
-        {
-            existente.Motivo = entidad.Motivo;
-            existente.Fecha = entidad.Fecha;
-            existente.Servicio = entidad.Servicio;
-            existente.Estado = entidad.Estado;
-            existente.Mascota = entidad.Mascota;
-        }
+         // modificar todos  los metodos acrualizar
     }
 
     public void Eliminar(Cita cita) => Citas.Remove(cita);

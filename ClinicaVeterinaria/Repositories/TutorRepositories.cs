@@ -3,9 +3,9 @@ using ClinicaVeterinaria.models;
 
 namespace ClinicaVeterinaria.Repositories;
 
-public class TutorRepositories : ICrudOperations<Tutor>
+public class TutorRepositories : ICrudOperations<Tutor>, ITutorRepository
 { 
-    public static List<Tutor> Tutores { get; set; }
+    private static List<Tutor> Tutores { get; set; }
 
     static TutorRepositories()
     {
@@ -28,18 +28,9 @@ public class TutorRepositories : ICrudOperations<Tutor>
     public void Actualizar(Tutor entidad)
     {
         // modificar todos  los metodos acrualizar
-        var existente = Tutores.Find(t => t.Id == entidad.Id);
-        if (existente != null)
-        {
-            existente.Nombre = entidad.Nombre;
-            existente.CC = entidad.CC;
-            existente.Telefono = entidad.Telefono;
-            existente.Email = entidad.Email;
-        }
     }
 
     public void Eliminar(Tutor tutor) => Tutores.Remove(tutor);
 
     public void Asignar(Tutor tutor, object mascota) => tutor.Mascotas.Add((Mascota)mascota);
-    
 }

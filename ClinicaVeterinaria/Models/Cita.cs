@@ -4,7 +4,7 @@ namespace ClinicaVeterinaria.models;
 
 public class Cita 
 {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         public string Motivo { get; set; }
         public DateTime Fecha { get; set; }
         public TipoServicio Servicio { get; set; }
