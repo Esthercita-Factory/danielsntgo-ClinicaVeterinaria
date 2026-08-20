@@ -1,6 +1,8 @@
+using ClinicaVeterinaria.models;
+
 namespace ClinicaVeterinaria.IInterfaces;
 
-public interface ITutorRepository
+public interface ITutorRepository : ICrudOperations<Tutor>
 {
     
 }

@@ -3,7 +3,7 @@ using ClinicaVeterinaria.models;
 
 namespace ClinicaVeterinaria.Repositories;
 
-public class MascotaRepositories : ICrudOperations<Mascota>, IMascotaRepository
+public class MascotaRepositories : IMascotaRepository
 {
     private static List<Mascota> Mascotas { get; set; }
 
@@ -24,20 +24,22 @@ public class MascotaRepositories : ICrudOperations<Mascota>, IMascotaRepository
         };
     }
 
-    public void Registrar(Mascota mascota) => Mascotas.Add(mascota);
+    public void  Registrar(Mascota mascota) => Mascotas.Add(mascota);
 
     public List<Mascota> Buscar() => Mascotas;
 
-    public void Actualizar(Mascota entidad)
+    public void Actualizar(Mascota mascota)
     {
-        // modificar todos  los metodos acrualizar
+        mascota.Nombre = mascota.Nombre;
+        mascota.Edad =  mascota.Edad;
+        mascota.Peso = mascota.Peso;
+        mascota.Especie = mascota.Especie;
+        mascota.Raza = mascota.Raza;
     }
 
     public void Eliminar(Mascota mascota) => Mascotas.Remove(mascota);
-
-    public void Asignar(Mascota mascota, object tutor)
-    {
-        mascota.Tutor = (Tutor)tutor;
-        Mascotas.Add(mascota);
-    } 
+    
+    public void Asignar(Mascota mascota, object tutor) => mascota.Tutor = (Tutor)tutor;
+    
+    public void desasignar(Mascota mascota, object Tutor) =>  mascota.Tutor = null;
 }

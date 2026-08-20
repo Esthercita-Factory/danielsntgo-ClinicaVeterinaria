@@ -8,4 +8,6 @@ public interface ICrudOperations<T>
     void Actualizar(T entidad);
     void Eliminar(T entidad);
     void Asignar(T entidad1, object entidad2);
+    void desasignar(T entidad1, object entidad2);
+    
 }

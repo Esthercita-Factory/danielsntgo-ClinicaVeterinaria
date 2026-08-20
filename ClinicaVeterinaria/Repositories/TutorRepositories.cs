@@ -3,7 +3,7 @@ using ClinicaVeterinaria.models;
 
 namespace ClinicaVeterinaria.Repositories;
 
-public class TutorRepositories : ICrudOperations<Tutor>, ITutorRepository
+public class TutorRepositories : ITutorRepository
 { 
     private static List<Tutor> Tutores { get; set; }
 
@@ -25,12 +25,17 @@ public class TutorRepositories : ICrudOperations<Tutor>, ITutorRepository
 
     public List<Tutor> Buscar() => Tutores;
 
-    public void Actualizar(Tutor entidad)
+    public void Actualizar(Tutor tutor)
     {
-        // modificar todos  los metodos acrualizar
+        tutor.Nombre = tutor.Nombre;
+        tutor.CC = tutor.CC;
+        tutor.Telefono = tutor.Telefono;
+        tutor.Email = tutor.Email;
     }
 
     public void Eliminar(Tutor tutor) => Tutores.Remove(tutor);
 
     public void Asignar(Tutor tutor, object mascota) => tutor.Mascotas.Add((Mascota)mascota);
+    public void desasignar(Tutor tutor, object mascota) => tutor.Mascotas.Remove((Mascota)mascota);
+    
 }
