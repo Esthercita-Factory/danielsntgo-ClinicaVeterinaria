@@ -4,7 +4,7 @@ public interface ICrudOperations<T>
 {
     
     void Registrar(T entidad);
-    List<T> Buscar();
+    List<T> obtenerTodos();
     void Actualizar(T entidad);
     void Eliminar(T entidad);
     void Asignar(T entidad1, object entidad2);

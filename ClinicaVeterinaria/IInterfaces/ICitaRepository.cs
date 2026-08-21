@@ -5,7 +5,7 @@ namespace ClinicaVeterinaria.IInterfaces;
 
 public interface ICitaRepository : ICrudOperations<Cita>
 {
-    DateTime ObtenerPorFecha(DateTime fecha);
-    EstadoCita ObtenerEstadoCita(EstadoCita estado);
-    TipoServicio ObtenerTipoServicio(TipoServicio tipoServicio);
+    List<Cita> ObtenerPorFecha(DateTime fecha);
+    List<Cita> ObtenerPorEstadoCita(EstadoCita estado);
+    List<Cita> ObtenerPorServicio(TipoServicio servicio);
 }

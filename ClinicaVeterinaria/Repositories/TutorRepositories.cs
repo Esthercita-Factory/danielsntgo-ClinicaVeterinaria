@@ -16,21 +16,10 @@ public class TutorRepositories : ITutorRepository
 
     public void Registrar(Tutor tutor) => _tutores.Add(tutor);
 
-    public List<Tutor> Buscar() => _tutores;
-    public List<Tutor> BuscarPorCC(string nome)
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<Tutor> BuscarPorNombre(string nombre)
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<Mascota> obtenerMascotas(string nombreMascota)
-    {
-        throw new NotImplementedException();
-    }
+    public List<Tutor> obtenerTodos() => _tutores;
+    public List<Tutor> BuscarPorCC(string nome) => _tutores;
+    public List<Tutor> BuscarPorNombre(string nombre) => _tutores;
+    public List<Mascota> obtenerMascotas(Tutor tutor) => tutor.Mascotas;
 
     public void Actualizar(Tutor tutor)
     {

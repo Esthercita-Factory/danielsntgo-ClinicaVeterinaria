@@ -15,7 +15,11 @@ public class MascotaRepositories : IMascotaRepository
 
     public void  Registrar(Mascota mascota) => _mascotas.Add(mascota);
 
-    public List<Mascota> Buscar() => _mascotas;
+    public List<Mascota> obtenerTodos() => _mascotas;
+    public List<Mascota> obtenerPorNombre(string nombreMascota) => _mascotas;
+    public List<Mascota> obtenerPorEspecie(string especie) => _mascotas;
+    public List<Mascota> obtenerPorRaza(string raza) => _mascotas;
+    public List<Cita> obtenetCitas(Mascota mascota) => mascota.Citas;
 
     public void Actualizar(Mascota mascota)
     {
@@ -25,10 +29,9 @@ public class MascotaRepositories : IMascotaRepository
         mascota.Especie = mascota.Especie;
         mascota.Raza = mascota.Raza;
     }
-
     public void Eliminar(Mascota mascota) => _mascotas.Remove(mascota);
-    
     public void Asignar(Mascota mascota, object tutor) => mascota.Tutor = (Tutor)tutor;
-    
     public void desasignar(Mascota mascota, object Tutor) =>  mascota.Tutor = null;
+    public void AsignarCita(Mascota mascota, object cita) => mascota.Citas.Add((Cita)cita);
+    public void desasignarCita(Mascota mascota, object cita) => mascota.Citas.Remove((Cita)cita);
 }

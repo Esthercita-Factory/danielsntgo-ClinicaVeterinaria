@@ -9,6 +9,7 @@ public class Mascota
     public string Especie { get; set; }
     public string Raza { get; set; }
     public Tutor? Tutor { get; set; }
+    public List<Cita> Citas { get; set; } = [];
     
     public Mascota(string nombre,
                    int edad,
@@ -24,6 +25,7 @@ public class Mascota
         Especie = especie.Trim().ToLower();
         Raza = raza.Trim().ToLower();
         Tutor = tutor;
+        Citas = new List<Cita>();
     }
 }
 

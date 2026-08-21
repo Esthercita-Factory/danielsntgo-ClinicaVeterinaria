@@ -8,7 +8,7 @@ public  class Tutor
         public string  CC { get;  set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-        public List<Mascota>  Mascotas { get; set; }
+        public List<Mascota> Mascotas { get; set; } = [];
         
     public Tutor(string nombre,
                  string cc,
