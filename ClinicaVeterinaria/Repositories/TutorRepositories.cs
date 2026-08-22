@@ -6,12 +6,12 @@ namespace ClinicaVeterinaria.Repositories;
 
 public class TutorRepositories : ITutorRepository
 {
-    private readonly List<Tutor> _tutores;
+    private List<Tutor> _tutores;
 
     public TutorRepositories(Almacen almacen)
 
     {
-        _tutores = almacen.Tutorses;
+        _tutores = almacen.Tutores;
     }
 
     public void Registrar(Tutor tutor) => _tutores.Add(tutor);

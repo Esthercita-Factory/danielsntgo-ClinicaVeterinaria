@@ -8,7 +8,7 @@ namespace ClinicaVeterinaria.Repositories;
 
 public class CitaRepository : ICitaRepository
 {
-    private readonly List<Cita> _citas;
+    private List<Cita> _citas;
     
     public CitaRepository(Almacen almacen)
     {

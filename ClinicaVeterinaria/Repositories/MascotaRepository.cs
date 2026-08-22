@@ -6,7 +6,7 @@ namespace ClinicaVeterinaria.Repositories;
 
 public class MascotaRepositories : IMascotaRepository
 {
-    private readonly List<Mascota> _mascotas;
+    private List<Mascota> _mascotas;
 
     public MascotaRepositories(Almacen almacen)
     {

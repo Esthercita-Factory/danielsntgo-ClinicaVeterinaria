@@ -1,0 +1,22 @@
+[33m05fa7ac[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m voy a empezar a implementar logia en services
+[33m0cdbf16[m implemente inyeccion de dependencias
+[33m49b8acb[m feat: actualizacion
+[33m90a25be[m conexion de services con repository
+[33ma1fa091[m implementando CRUD
+[33m05882d9[m actualizacion
+[33m2e3d3e4[m actualizacion
+[33m124a62b[m Empeze a usa clase abstracta,interfazes y enums, sando los pilares de la POO
+[33m6f341ed[m actualizacion
+[33m8cf9036[m actualizacion
+[33mcaa2d60[m cambios pequeños
+[33m308b73b[m Estoy creando el models Cita y conectandolo con lo demas, ademas empee a usar herencia
+[33m3d8b5f8[m Agrega entidades Cita y Dueño con relación por ID
+[33m57308e3[m add a new entity call DuenoMascota and cross with entity call PacienteMascota
+[33mafc1c62[m finalize H1,realize validaciones en PacienteServicies y maneje errores en UI ControlMenu, ya el programa cumple con lo basico
+[33m4e1f25c[m termine el repositories de pacientes e implemente metodos para gestionar pacientes
+[33m6ea1a77[m Estructurar modelo Paciente, inicializar lista en repositorio e implementar busqueda por nombre
+[33m606c845[m primeros cambios
+[33m2a987b7[m actualizacion proyecto clinica
+[33m35de0c8[m Update README.md
+[33maf7bcd6[m Update README.md
+[33md67e9d6[m Initial commit
