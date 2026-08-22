@@ -12,4 +12,6 @@ public interface ICitaService
     List<Cita> ObtenerPorServicio(TipoServicio servicio);
     void Actualizar(Cita cita);
     void Eliminar(Cita cita);
+    void Asignar(Cita cita, object mascota);
+    void Designar(Cita cita, object mascota);
 }
